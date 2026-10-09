@@ -1,0 +1,120 @@
+{
+    "actorSpecification": 1,
+    "fields": {
+        "type": "object",
+        "properties": {
+            "type": {
+                "type": "string",
+                "title": "Entity Type"
+            },
+            "url": {
+                "type": "string",
+                "title": "Telegram URL"
+            },
+            "id": {
+                "type": "string",
+                "title": "Item ID / Username"
+            },
+            "channelName": {
+                "type": "string",
+                "title": "Channel Name"
+            },
+            "channelUsername": {
+                "type": "string",
+                "title": "Channel @Username"
+            },
+            "channelDescription": {
+                "type": "string",
+                "title": "Channel Bio / Description"
+            },
+            "subscribersCount": {
+                "type": "string",
+                "title": "Subscribers Count"
+            },
+            "subscribersCountRaw": {
+                "type": "integer",
+                "title": "Subscribers Raw Count"
+            },
+            "avatarUrl": {
+                "type": "string",
+                "title": "Channel Avatar URL"
+            },
+            "isVerified": {
+                "type": "boolean",
+                "title": "Verified Badge"
+            },
+            "messageId": {
+                "type": "integer",
+                "title": "Post Message ID"
+            },
+            "text": {
+                "type": "string",
+                "title": "Post Message Content"
+            },
+            "viewsCount": {
+                "type": "string",
+                "title": "Views Count (Formatted)"
+            },
+            "viewsCountRaw": {
+                "type": "integer",
+                "title": "Views Count (Numeric)"
+            },
+            "forwardsCount": {
+                "type": "integer",
+                "title": "Forwards / Shares Count"
+            },
+            "reactions": {
+                "type": "array",
+                "title": "Reactions Breakdown"
+            },
+            "mediaType": {
+                "type": "string",
+                "title": "Media Type (photo, video, document, none)"
+            },
+            "photoUrl": {
+                "type": "string",
+                "title": "Direct Photo URL"
+            },
+            "photoUrls": {
+                "type": "array",
+                "title": "Gallery Photos URLs"
+            },
+            "videoUrl": {
+                "type": "string",
+                "title": "Video Stream URL"
+            },
+            "externalLinks": {
+                "type": "array",
+                "title": "External Links in Post"
+            },
+            "email": {
+                "type": "string",
+                "title": "Contact Email"
+            },
+            "emails": {
+                "type": "array",
+                "title": "Extracted Emails"
+            },
+            "phone": {
+                "type": "string",
+                "title": "Contact Phone"
+            },
+            "phones": {
+                "type": "array",
+                "title": "Extracted Phones"
+            },
+            "searchQuery": {
+                "type": "string",
+                "title": "Search Keyword"
+            },
+            "date": {
+                "type": "string",
+                "title": "Publication Timestamp"
+            },
+            "scrapedAt": {
+                "type": "string",
+                "title": "Scraped At Timestamp"
+            }
+        }
+    }
+}
