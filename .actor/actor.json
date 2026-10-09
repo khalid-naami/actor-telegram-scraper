@@ -1,0 +1,25 @@
+{
+    "actorSpecification": 1,
+    "name": "telegram-ultimate-scraper",
+    "title": "Telegram Ultimate Scraper (Channels, Posts, Media, Views & Reactions)",
+    "description": "Comprehensive Telegram data extractor without login. Extracts Public Channels, Posts & Messages, Engagement metrics (Views, Reactions, Forwards), Media files (Photos, Videos), Leads (Emails/Phones), and Channel Finder by Keyword.",
+    "version": "1.0.0",
+    "meta": {
+        "templateId": "js-crawlee-playwright"
+    },
+    "dockerfile": "./Dockerfile",
+    "input": "./input_schema.json",
+    "storages": {
+        "dataset": "./dataset_schema.json"
+    },
+    "output": "./output_schema.json",
+    "categories": [
+        "SOCIAL_MEDIA",
+        "LEAD_GENERATION",
+        "MARKETING",
+        "COMMUNICATION"
+    ],
+    "environmentVariables": {
+        "APIFY_DISABLE_BROWSER_SANDBOX": "1"
+    }
+}
