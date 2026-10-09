@@ -1,0 +1,72 @@
+{
+    "title": "Telegram Ultimate Scraper Input Schema",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "mode": {
+            "title": "Scraping Mode",
+            "type": "string",
+            "description": "Select Telegram data extraction mode, or use AUTO_DETECT.",
+            "default": "AUTO_DETECT",
+            "editor": "select",
+            "enum": [
+                "AUTO_DETECT",
+                "CHANNELS",
+                "POSTS",
+                "CHANNEL_FINDER"
+            ],
+            "enumTitles": [
+                "Auto-Detect (From URLs)",
+                "Channel Info (Bio, Subscribers, Avatar & Status)",
+                "Posts & Messages (Text, Views, Reactions & Media)",
+                "Channel Finder by Keyword (Discover Public Channels)"
+            ]
+        },
+        "targetUrls": {
+            "title": "Target Telegram Channel URLs",
+            "type": "array",
+            "description": "List of public Telegram channel links (e.g., https://t.me/s/durov or https://t.me/telegram).",
+            "editor": "stringList",
+            "prefill": [
+                "https://t.me/s/durov",
+                "https://t.me/s/telegram"
+            ]
+        },
+        "searchKeywords": {
+            "title": "Search Keywords for Channel Finder",
+            "type": "array",
+            "description": "Keywords to discover public Telegram channels across the web.",
+            "editor": "stringList",
+            "prefill": [
+                "artificial intelligence community",
+                "crypto trading signals"
+            ]
+        },
+        "maxPosts": {
+            "title": "Maximum Posts Per Channel",
+            "type": "integer",
+            "description": "Maximum number of messages to extract per channel.",
+            "default": 50,
+            "minimum": 1,
+            "maximum": 2000
+        },
+        "maxItems": {
+            "title": "Maximum Channels to Process",
+            "type": "integer",
+            "description": "Maximum number of channels or discovery items to process.",
+            "default": 30,
+            "minimum": 1,
+            "maximum": 1000
+        },
+        "proxyConfiguration": {
+            "title": "Proxy Configuration",
+            "type": "object",
+            "description": "Select Apify Proxy (RESIDENTIAL recommended for fast unthrottled access).",
+            "editor": "proxy",
+            "default": {
+                "useApifyProxy": true
+            }
+        }
+    },
+    "required": []
+}
