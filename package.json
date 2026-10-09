@@ -1,0 +1,32 @@
+{
+  "name": "actor-telegram-scraper",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Telegram Ultimate All-in-One Scraper on Apify. Extracts Public Channels, Posts & Messages, Engagement (Views, Reactions), Media Attachments, Leads (Emails/Phones), and Channel Finder by Keyword without needing a login.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "node src/main.js"
+  },
+  "keywords": [
+    "apify",
+    "actor",
+    "telegram",
+    "telegram-scraper",
+    "channels",
+    "messages",
+    "posts",
+    "leads",
+    "reactions",
+    "crawlee",
+    "playwright"
+  ],
+  "author": "Khalil",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "apify": "^3.2.6",
+    "crawlee": "^3.12.2",
+    "got-scraping": "^4.0.7",
+    "playwright": "^1.49.1"
+  }
+}
