@@ -1,7 +1,9 @@
 {
     "actorSpecification": 1,
     "fields": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
         "type": "object",
+        "additionalProperties": true,
         "properties": {
             "type": {
                 "type": "string",
@@ -10,6 +12,10 @@
             "url": {
                 "type": "string",
                 "title": "Telegram URL"
+            },
+            "previewUrl": {
+                "type": "string",
+                "title": "Web Preview URL"
             },
             "id": {
                 "type": "string",
@@ -65,7 +71,19 @@
             },
             "reactions": {
                 "type": "array",
-                "title": "Reactions Breakdown"
+                "title": "Reactions Breakdown",
+                "items": {
+                    "type": "object",
+                    "additionalProperties": true,
+                    "properties": {
+                        "emoji": {
+                            "type": "string"
+                        },
+                        "count": {
+                            "type": "integer"
+                        }
+                    }
+                }
             },
             "mediaType": {
                 "type": "string",
@@ -77,7 +95,10 @@
             },
             "photoUrls": {
                 "type": "array",
-                "title": "Gallery Photos URLs"
+                "title": "Gallery Photos URLs",
+                "items": {
+                    "type": "string"
+                }
             },
             "videoUrl": {
                 "type": "string",
@@ -85,7 +106,10 @@
             },
             "externalLinks": {
                 "type": "array",
-                "title": "External Links in Post"
+                "title": "External Links in Post",
+                "items": {
+                    "type": "string"
+                }
             },
             "email": {
                 "type": "string",
@@ -93,7 +117,10 @@
             },
             "emails": {
                 "type": "array",
-                "title": "Extracted Emails"
+                "title": "Extracted Emails",
+                "items": {
+                    "type": "string"
+                }
             },
             "phone": {
                 "type": "string",
@@ -101,11 +128,18 @@
             },
             "phones": {
                 "type": "array",
-                "title": "Extracted Phones"
+                "title": "Extracted Phones",
+                "items": {
+                    "type": "string"
+                }
             },
             "searchQuery": {
                 "type": "string",
                 "title": "Search Keyword"
+            },
+            "source": {
+                "type": "string",
+                "title": "Discovery Source"
             },
             "date": {
                 "type": "string",
@@ -114,6 +148,70 @@
             "scrapedAt": {
                 "type": "string",
                 "title": "Scraped At Timestamp"
+            }
+        }
+    },
+    "views": {
+        "overview": {
+            "title": "Overview",
+            "transformation": {
+                "fields": [
+                    "type",
+                    "channelUsername",
+                    "channelName",
+                    "subscribersCount",
+                    "messageId",
+                    "text",
+                    "viewsCount",
+                    "mediaType",
+                    "date",
+                    "url"
+                ]
+            },
+            "display": {
+                "component": "table",
+                "properties": {
+                    "type": {
+                        "label": "Type",
+                        "format": "text"
+                    },
+                    "channelUsername": {
+                        "label": "Channel",
+                        "format": "text"
+                    },
+                    "channelName": {
+                        "label": "Name",
+                        "format": "text"
+                    },
+                    "subscribersCount": {
+                        "label": "Subscribers",
+                        "format": "text"
+                    },
+                    "messageId": {
+                        "label": "Msg ID",
+                        "format": "number"
+                    },
+                    "text": {
+                        "label": "Text",
+                        "format": "text"
+                    },
+                    "viewsCount": {
+                        "label": "Views",
+                        "format": "text"
+                    },
+                    "mediaType": {
+                        "label": "Media",
+                        "format": "text"
+                    },
+                    "date": {
+                        "label": "Date",
+                        "format": "date"
+                    },
+                    "url": {
+                        "label": "URL",
+                        "format": "link"
+                    }
+                }
             }
         }
     }
