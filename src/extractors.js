@@ -30,12 +30,13 @@ export function sanitizeRecord(value) {
     if (Array.isArray(value)) {
         return value
             .map((item) => sanitizeRecord(item))
-            .filter((item) => item !== null && item !== undefined);
+            .filter((item) => item !== null && item !== undefined && !(typeof item === 'number' && !Number.isFinite(item)));
     }
     if (value && typeof value === 'object') {
         const out = {};
         for (const [k, v] of Object.entries(value)) {
             if (v === null || v === undefined) continue;
+            if (typeof v === 'number' && !Number.isFinite(v)) continue;
             if (Array.isArray(v)) {
                 const cleaned = sanitizeRecord(v);
                 out[k] = cleaned;
